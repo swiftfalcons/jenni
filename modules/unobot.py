@@ -790,7 +790,7 @@ def uno_names(jenni, input, override=False):
     global user_triggered
     if input.sender != CHANNEL:
         return jenni.reply('Try: "/ctcp %s ping" or simply "%s!"' % (jenni.nick, jenni.nick))
-    if time.time() - away_last < 480 and not override:
+    if time.time() - away_last < 1 and not override:
         jenni.notice(input.nick, 'This command is throttled due to abuse.')
         return
     away_last = time.time()
